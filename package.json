@@ -1,0 +1,33 @@
+{
+  "name": "jquery-slideshow",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "jquery"
+  ],
+  "scripts": {
+    "test": "gulp lint && node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html"
+  },
+  "author": {
+    "name": "Daniel Husar",
+    "email": "dano.husar@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ttps://github.com/danielhusar/jquery-slideshow"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "express": "^4.2.0",
+    "gulp": "^3.8.6",
+    "gulp-jshint": "^1.6.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.0",
+    "jshint-stylish": "^0.2.0",
+    "mocha": "^1.18.2",
+    "mocha-phantomjs": "^3.5.0",
+    "open": "^0.0.5",
+    "serve-index": "^1.0.2"
+  },
+  "readmeFilename": "Readme.md"
+}

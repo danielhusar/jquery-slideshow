@@ -1,0 +1,21 @@
+{
+  "name": "jquery-slideshow",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danielhusar/jquery-slideshow",
+  "authors": [
+    "Daniel Husar <dano.husar@gmail.com>"
+  ],
+  "description": "",
+  "main": "./dest/jquery-slideshow",
+  "keywords": [
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
