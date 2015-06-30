@@ -4,35 +4,40 @@ describe('Slideshow', function () {
 
   var $slideshow = window.slideshow('.slideshow');
 
-  it('Init should work', function (cb) {
+  function eventFire (el, etype) {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+
+  it('Init should work', function () {
     assert(!$slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-3').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-4').classList.contains('hidden'));
     assert($slideshow.classList.contains('first-item'));
     assert(!$slideshow.classList.contains('last-item'));
-    cb();
   });
 
   it('Navigation forward works', function () {
     var $next = $slideshow.querySelector('.next');
 
-    $next.click();
+    eventFire($next, 'click');
 
     assert($slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert(!$slideshow.querySelector('.item-2').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-3').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-4').classList.contains('hidden'));
 
-    $next.click();
-    $next.click();
+    eventFire($next, 'click');
+    eventFire($next, 'click');
 
     assert($slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-3').classList.contains('hidden'));
     assert(!$slideshow.querySelector('.item-4').classList.contains('hidden'));
 
-    $next.click();
+    eventFire($next, 'click');
 
     assert($slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));
@@ -43,22 +48,22 @@ describe('Slideshow', function () {
   it('Navigation backwards works', function () {
     var $prev = $slideshow.querySelector('.prev');
 
-    $prev.click();
+    eventFire($prev, 'click');
 
     assert($slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));
     assert(!$slideshow.querySelector('.item-3').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-4').classList.contains('hidden'));
 
-    $prev.click();
-    $prev.click();
+    eventFire($prev, 'click');
+    eventFire($prev, 'click');
 
     assert(!$slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-3').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-4').classList.contains('hidden'));
 
-    $prev.click();
+    eventFire($prev, 'click');
 
     assert(!$slideshow.querySelector('.item-1').classList.contains('hidden'));
     assert($slideshow.querySelector('.item-2').classList.contains('hidden'));

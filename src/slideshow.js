@@ -41,8 +41,17 @@
         }
       });
 
-      $wrap.classList.toggle('first-item', current === 1);
-      $wrap.classList.toggle('last-item', current === max);
+      if ( current === 1) {
+        $wrap.classList.add('first-item');
+      } else {
+        $wrap.classList.remove('first-item');
+      }
+
+      if ( current === max) {
+        $wrap.classList.add('last-item');
+      } else {
+        $wrap.classList.remove('last-item');
+      }
     }
 
     function forEach (selector, cb) {
