@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
   <script src="../node_modules/mocha/mocha.js"></script>
   <script src="../node_modules/chai/chai.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="../src/jquery-slideshow.js"></script>
+  <script src="../src/slideshow.js"></script>
   <script>
     mocha.ui('bdd');
     mocha.reporter('html');
@@ -16,12 +15,19 @@
 
 <body>
   <div id="mocha"></div>
+
+  <div class="slideshow">
+    <div class="prev"></div>
+    <div class="next"></div>
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+  </div>
   <script src="spec.js"></script>
   <script>
-  $(window).load(function() {
     if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
     else { mocha.run(); }
-  });
   </script>
 </body>
 </html>

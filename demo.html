@@ -4,10 +4,20 @@
   <meta charset="utf-8">
   <title>jquery-slideshow</title>
 </head>
-
 <body>
 
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="src/jquery-slideshow.js"></script>
+  <script src="src/slideshow.js"></script>
+  <div class="slideshow">
+    <div class="prev"></div>
+    <div class="next"></div>
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+  </div>
+
+  <script>window.slideshow('.slideshow');</script>
+
+
 </body>
 </html>
